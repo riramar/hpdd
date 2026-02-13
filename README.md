@@ -1,7 +1,5 @@
 # Header Parsing Discrepancy Detector (hpdd)
 
-[![GitHub](https://img.shields.io/github/license/riramar/hpdd)](https://github.com/riramar/hpdd)
-
 ## Overview
 
 **hpdd.py** is a tool for detecting HTTP header parsing discrepancies across different proxies in a chain. It automates the process of testing various header mutations and transformations, comparing responses to identify inconsistencies that may indicate security issues such as HTTP request smuggling.
