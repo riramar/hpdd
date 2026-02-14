@@ -2,7 +2,7 @@
 
 ## Overview
 
-**hpdd.py** is a tool for detecting HTTP header parsing discrepancies across different proxies in a chain. It automates the process of testing various header mutations and transformations, comparing responses to identify inconsistencies that may indicate security issues such as HTTP request smuggling.
+**hpdd** is a tool for detecting HTTP header parsing discrepancies across different proxies in a chain. It automates the process of testing various header mutations and transformations, comparing responses to identify inconsistencies that may indicate security issues such as HTTP request smuggling.
 
 ## Research Credits
 This tool is based on and inspired by the following research:
