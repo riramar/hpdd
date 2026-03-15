@@ -196,7 +196,8 @@ class HeaderDiscrepancyDetector:
             request += "Sec-Fetch-User: ?1\r\n"
             request += "Sec-Fetch-Dest: document\r\n"
             request += "Priority: u=0, i\r\n"
-            request += f"Connection: {self.connection_header}\r\n"
+            if "connection" not in header.lower():
+                request += f"Connection: {self.connection_header}\r\n"
             request += "\r\n"
             # If Transfer-Encoding header is present, add '0\r\n\r\n' as the request body
             if "transfer-encoding" in header.lower():
