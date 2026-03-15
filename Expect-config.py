@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sample configuration file for header-discrepancy.py
+Sample configuration file for hpdd
 
 This file demonstrates the format for test configurations, transformations and mutation characters.
 Users can copy this format and modify it as needed.

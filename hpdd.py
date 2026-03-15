@@ -1342,15 +1342,15 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Example usage:
-  python header-discrepancy.py https://example.com
-  python header-discrepancy.py https://example.com -t 15
-  python header-discrepancy.py https://example.com -u "Custom-Agent/1.0"
-  python header-discrepancy.py https://example.com -q
-  python header-discrepancy.py https://example.com -m POST
-  python header-discrepancy.py https://example.com -c config.py
-  python header-discrepancy.py https://example.com -st
-  python header-discrepancy.py https://example.com -sm
-  python header-discrepancy.py https://example.com --timeout 15 --quit-on-first
+  hpdd https://example.com
+  hpdd https://example.com -t 15
+  hpdd https://example.com -u "Custom-Agent/1.0"
+  hpdd https://example.com -q
+  hpdd https://example.com -m POST
+  hpdd https://example.com -c config.py
+  hpdd https://example.com -st
+  hpdd https://example.com -sm
+  hpdd https://example.com --timeout 15 --quit-on-first
         """
     )
     
