@@ -235,9 +235,15 @@ class HeaderDiscrepancyDetector:
                     return TestResult(status_code=0, body_length=-1, body_lines=-1, headers_length=-1, headers_lines=-1, error="Socket timed out while receiving data")
             
             sock.close()
+
+            # Print raw response if debug is enabled
+            response_str = response.decode('utf-8', errors='ignore')
+            if hasattr(self, 'debug') and self.debug:
+                print("\n" + "\u2500" * 20 + " > RAW RESPONSE > " + "\u2500" * 20)
+                print(response_str)
+                print("\u2500" * 20 + " < RAW RESPONSE < " + "\u2500" * 20 + "\n")
             
             # Parse response
-            response_str = response.decode('utf-8', errors='ignore')
             lines = response_str.split('\r\n')
             if lines:
                 status_line = lines[0]
@@ -1366,7 +1372,7 @@ Example usage:
     parser.add_argument('-st', '--skip-transformations', action='store_true', help='Skip transformation tests (cannot be used with --skip-mutations).')
     parser.add_argument('-sm', '--skip-mutations', action='store_true', help='Skip mutation tests (cannot be used with --skip-transformations).')
     parser.add_argument('-e', '--deviation', type=int, default=20, help='Allowed deviation percentage for response body/headers length comparisons (default: 20).')
-    parser.add_argument('-d', '--debug', action='store_true', help='Print raw HTTP request for debugging (default: false).')
+    parser.add_argument('-d', '--debug', action='store_true', help='Print raw HTTP request and response for debugging (default: false).')
     parser.add_argument('-k', '--confirm', action='store_true', help='Confirm discrepancies by retesting the same requests before reporting (default: false).')
     parser.add_argument('-so', '--skip-timeout', action='store_true', help='Skip tests when timeout occurs, treating timeouts the same as failed requests (default: false).')
     
